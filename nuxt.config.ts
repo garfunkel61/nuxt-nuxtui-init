@@ -11,6 +11,7 @@ export default defineNuxtConfig({
       },
     },
   },
+  css: ["primeicons/primeicons.css"],
   compatibilityDate: "2024-11-01",
   future: {
     compatibilityVersion: 4,
