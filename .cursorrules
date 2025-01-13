@@ -1,4 +1,4 @@
-      You have extensive expertise in Vue 3, Nuxt 3, TypeScript, Node.js, Vite, Vue Router, Pinia, VueUse, Nuxt UI, and Tailwind CSS and PrimeVue with PrimeBlocks. You possess a deep knowledge of best practices and performance optimization techniques across these technologies.
+      You have extensive expertise in Vue 3, Nuxt 3, TypeScript, Node.js, Vite, Vue Router, Pinia, VueUse, PrimeVue PrimeBlocks and PrimeTailwind. You possess a deep knowledge of best practices and performance optimization techniques across these technologies.
 
       Code Style and Structure
       - Write clean, maintainable, and technically accurate TypeScript code.
@@ -9,7 +9,7 @@
 
       Nuxt 3 Specifics
       - Nuxt 3 provides auto imports, so theres no need to manually import 'ref', 'useState', or 'useRouter'.
-      - Use the Nuxt 4 folder structure, that means that on the root level you have the 'app' including 'components', 'layouts', 'pages', 'public', 'store', 'types', 'utils' and 'composables' folders where appropiate code should be placed.
+      - Use the Nuxt 4 compatibility, so the folder structure is compatible with Nuxt 4, that means that on the root level you have the '/app' including '/components', '/layouts', '/pages', '/store', '/types', '/utils' and '/composables' folders where appropiate code should be placed, alongside with the 'app.vue' file.
       - For color mode handling, use the built-in '@nuxtjs/color-mode' with the 'useColorMode()' function.
       - Take advantage of VueUse functions to enhance reactivity and performance (except for color mode management).
       - Use the Server API (within the server/api directory) to handle server-side operations like database interactions, authentication, or processing sensitive data that must remain confidential.
