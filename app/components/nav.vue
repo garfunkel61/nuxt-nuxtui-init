@@ -57,6 +57,18 @@
           </NuxtLink>
         </li>
         <li>
+          <NuxtLink to="/projects">
+            <Button
+              class="px-0 lg:px-8 mr-4"
+              variant="text"
+              severity="secondary"
+              label="Projects"
+              icon="pi pi-code"
+              iconPos="right"
+            />
+          </NuxtLink>
+        </li>
+        <li>
           <NuxtLink to="/about">
             <Button
               class="px-0 lg:px-8 mr-4"
