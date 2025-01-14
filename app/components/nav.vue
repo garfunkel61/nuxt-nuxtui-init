@@ -33,27 +33,39 @@
         class="list-none p-0 m-0 flex lg:items-center text-surface-900 dark:text-surface-0 select-none flex-col lg:flex-row cursor-pointer"
       >
         <li>
-          <NuxtLink
-            to="/"
-            class="flex px-0 lg:px-8 py-4 hover:text-primary font-medium transition-colors duration-150"
-          >
-            <span>Home <i class="pi pi-home"></i></span>
+          <NuxtLink to="/">
+            <Button
+              class="px-0 lg:px-8 mr-4"
+              variant="text"
+              severity="secondary"
+              iconPos="right"
+              label="Home"
+              icon="pi pi-home"
+            />
           </NuxtLink>
         </li>
         <li>
-          <NuxtLink
-            to="/blog"
-            class="flex px-0 lg:px-8 py-4 hover:text-primary font-medium transition-colors duration-150"
-          >
-            <span>Blog <i class="pi pi-book"></i></span>
+          <NuxtLink to="/blog">
+            <Button
+              class="px-0 lg:px-8 mr-4"
+              variant="text"
+              severity="secondary"
+              iconPos="right"
+              label="Blog"
+              icon="pi pi-book"
+            />
           </NuxtLink>
         </li>
         <li>
-          <NuxtLink
-            to="/about"
-            class="flex px-0 lg:px-8 py-4 hover:text-primary font-medium transition-colors duration-150"
-          >
-            <span>About <i class="pi pi-info"></i></span>
+          <NuxtLink to="/about">
+            <Button
+              class="px-0 lg:px-8 mr-4"
+              variant="text"
+              severity="secondary"
+              label="About"
+              icon="pi pi-info"
+              iconPos="right"
+            />
           </NuxtLink>
         </li>
       </ul>
