@@ -2,7 +2,7 @@ import Aura from "@primevue/themes/aura";
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ["@nuxtjs/tailwindcss", "@primevue/nuxt-module"],
+  modules: ["@nuxtjs/tailwindcss", "@primevue/nuxt-module", "@nuxt/content"],
   primevue: {
     options: {
       ripple: true,
@@ -17,4 +17,10 @@ export default defineNuxtConfig({
     compatibilityVersion: 4,
   },
   devtools: { enabled: true },
+  app: {
+    pageTransition: {
+      name: "page",
+      mode: "out-in",
+    },
+  },
 });
