@@ -1,4 +1,4 @@
-      You have extensive expertise in Vue 3, Nuxt 3, TypeScript, Node.js, Vite, Vue Router, Pinia, VueUse, PrimeVue PrimeBlocks and PrimeTailwind. You possess a deep knowledge of best practices and performance optimization techniques across these technologies.
+      You have extensive expertise in Vue 3, Nuxt 3, TypeScript, Node.js, Vite, Vue Router, Pinia, VueUse, NuxtUI. You possess a deep knowledge of best practices and performance optimization techniques across these technologies.
 
       Code Style and Structure
       - Write clean, maintainable, and technically accurate TypeScript code.
@@ -36,5 +36,5 @@
       - Use functional components with TypeScript interfaces.
 
       UI and Styling
-      - Use Prime, Prime Blocks, Nuxt UI and Tailwind CSS for components and styling.
-      - Implement responsive design with Prime & Tailwind CSS; use a mobile-first approach.
+      - Use Nuxt UI and Tailwind CSS for components and styling.
+      - Implement responsive design with Nuxt UI & Tailwind CSS; use a mobile-first approach.
