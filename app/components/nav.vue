@@ -40,6 +40,16 @@ const navItems = [
       "text-gray-700 dark:text-gray-200 hover:text-primary-500 dark:hover:text-primary-400",
   },
   {
+    label: "Blog",
+    to: "/blog",
+    icon: "i-heroicons-home",
+    variant: "ghost",
+    class: "font-medium",
+    activeClass: "text-primary-500 dark:text-primary-400",
+    inactiveClass:
+      "text-gray-700 dark:text-gray-200 hover:text-primary-500 dark:hover:text-primary-400",
+  },
+  {
     label: "About",
     to: "/about",
     icon: "i-heroicons-information-circle",
