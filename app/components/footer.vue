@@ -1,58 +1,41 @@
 <template>
-  <UContainer class="bg-surface-0 dark:bg-surface-950 py-12">
-    <div class="flex flex-col items-center text-center">
-      <svg
-        width="50"
-        height="50"
-        viewBox="0 0 50 50"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M42.6792 7.32384C39.183 3.82714 34.7285 1.44571 29.8788 0.480712C25.0292 -0.484288 20.0023 0.0105324 15.4339 1.90259C10.8655 3.79464 6.9608 6.99901 4.21357 11.1103C1.46634 15.2216 0 20.0553 0 25C0 29.9447 1.46634 34.7784 4.21357 38.8897C6.9608 43.001 10.8655 46.2054 15.4339 48.0974C20.0023 49.9895 25.0292 50.4843 29.8788 49.5193C34.7285 48.5543 39.183 46.1729 42.6792 42.6762C47.3667 37.9879 50 31.6296 50 25C50 18.3704 47.3667 12.0121 42.6792 7.32384ZM6.52009 16.5397C7.77982 13.7456 9.64643 11.2673 11.9843 9.28518C14.3221 7.30303 17.0722 5.86678 20.0347 5.08098C22.9973 4.29517 26.0978 4.17955 29.1106 4.7425C32.1235 5.30544 34.9729 6.53277 37.452 8.33527C31.3155 7.75571 23.6337 10.8921 17.4065 17.1079C15.0562 19.4544 13.0651 22.1348 11.4974 25.0625C9.36518 22.5257 7.68188 19.6433 6.52009 16.5397ZM20.3042 45.5397C15.5592 44.2684 11.4229 41.347 8.6383 37.3001C5.85366 33.2533 4.60304 28.3462 5.11107 23.4602C7.69054 29.0625 14.202 34.1534 22.7474 36.4262C25.9376 37.2915 29.2393 37.6745 32.5429 37.5625C31.4201 40.6682 29.7795 43.5614 27.6905 46.1193C25.2123 46.37 22.7091 46.1659 20.3042 45.517V45.5397ZM35.8611 21.7784C35.0187 18.5738 33.7092 15.5107 31.9746 12.6875C35.2238 12.1091 38.5474 12.0861 41.8042 12.6193C43.262 14.6374 44.3366 16.9062 44.9746 19.3125C46.2481 24.0582 45.7875 29.1025 43.6754 33.539C41.5634 37.9755 37.9385 41.5134 33.452 43.5171C36.9974 38.5057 38.1337 30.2897 35.8611 21.7784Z"
-          class="fill-primary"
-        />
-      </svg>
-
-      <p class="font-medium text-surface-900 dark:text-surface-0 mt-6 mb-4">
-        &copy; {{ new Date().getFullYear() }} Bastion, Inc
-      </p>
-
-      <p
-        class="text-surface-600 dark:text-surface-200 leading-normal mb-6 max-w-2xl"
-      >
-        Cursus metus aliquam eleifend mi. Malesuada pellentesque elit eget
-        gravida. Nunc eget lorem dolor sed viverra ipsum nunc aliquet bibendum.
-        Massa tincidunt dui ut ornare lectus sit amet est placerat.
-      </p>
-
-      <div class="flex items-center justify-center gap-8">
-        <ULink
-          to="https://twitter.com"
-          external
-          class="text-surface-700 dark:text-surface-100 hover:opacity-75"
+  <UFooter>
+    <template #left>
+      <UButton to="/" variant="ghost" class="p-0">
+        <svg
+          class="h-12 fill-gray-700 dark:fill-gray-200"
+          viewBox="0 0 30 32"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          <UIcon name="i-ph-twitter-logo" />
-        </ULink>
-        <ULink
-          to="https://facebook.com"
-          external
-          class="text-surface-700 dark:text-surface-100 hover:opacity-75"
-        >
-          <UIcon name="i-ph-facebook-logo" />
-        </ULink>
-        <ULink
-          to="https://github.com"
-          external
-          class="text-surface-700 dark:text-surface-100 hover:opacity-75"
-        >
-          <UIcon name="i-ph-github-logo" />
-        </ULink>
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M20.7207 6.18211L14.9944 3.11148L3.46855 9.28678L0.579749 7.73444L14.9944 0L23.6242 4.62977L20.7207 6.18211ZM14.9996 12.3574L26.5182 6.1821L29.4216 7.73443L14.9996 15.4621L6.37724 10.8391L9.27337 9.28677L14.9996 12.3574ZM2.89613 16.572L0 15.0196V24.2656L14.4147 32V28.8953L2.89613 22.7132V16.572ZM11.5185 18.09L0 11.9147V8.81001L14.4147 16.5376V25.7904L11.5185 24.2312V18.09ZM24.2086 15.0194V11.9147L15.5788 16.5377V31.9998L18.475 30.4474V18.09L24.2086 15.0194ZM27.0969 22.7129V10.3623L30.0004 8.81V24.2653L21.3706 28.895V25.7904L27.0969 22.7129Z"
+          />
+        </svg>
+      </UButton>
+    </template>
+
+    <template #center>
+      <div class="flex items-center gap-4">
+        <UButton to="/" variant="link">Home</UButton>
+        <UButton to="/about" variant="link">About</UButton>
       </div>
-    </div>
-  </UContainer>
+    </template>
+
+    <template #right>
+      <div class="flex items-center gap-4">
+        <UColorModeButton />
+        <UButton
+          icon="i-simple-icons-github"
+          variant="ghost"
+          href="https://github.com"
+          target="_blank"
+        />
+      </div>
+    </template>
+  </UFooter>
 </template>
 
-<script setup>
-// Dynamic year is handled inline in the template
-</script>
+<script setup></script>

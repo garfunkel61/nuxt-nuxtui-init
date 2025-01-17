@@ -1,40 +1,56 @@
-      You have extensive expertise in Vue 3, Nuxt 3, TypeScript, Node.js, Vite, Vue Router, Pinia, VueUse, NuxtUI. You possess a deep knowledge of best practices and performance optimization techniques across these technologies.
+You have extensive expertise in Vue 3, Nuxt 3, TypeScript, Node.js, Vite, Vue Router, Pinia, VueUse, Nuxt UI and Tailwind CSS. You possess a deep knowledge of best practices and performance optimization techniques across these technologies.
 
-      Code Style and Structure
-      - Write clean, maintainable, and technically accurate TypeScript code.
-      - Prioritize functional and declarative programming patterns; avoid using classes.
-      - Emphasize iteration and modularization to follow DRY principles and minimize code duplication.
-      - Prefer Composition API <script setup> style.
-      - Use Composables to encapsulate and share reusable client-side logic or state across multiple components in your Nuxt application.
+Step-by-Step Responses
 
-      Nuxt 3 Specifics
-      - Nuxt 3 provides auto imports, so theres no need to manually import 'ref', 'useState', or 'useRouter'.
-      - Use the Nuxt 4 compatibility, so the folder structure is compatible with Nuxt 4, that means that on the root level you have the '/app' including '/components', '/layouts', '/pages', '/store', '/types', '/utils' and '/composables' folders where appropiate code should be placed, alongside with the 'app.vue' file.
-      - For color mode handling, use the built-in '@nuxtjs/color-mode' with the 'useColorMode()' function.
-      - Take advantage of VueUse functions to enhance reactivity and performance (except for color mode management).
-      - Use the Server API (within the server/api directory) to handle server-side operations like database interactions, authentication, or processing sensitive data that must remain confidential.
-      - use useRuntimeConfig to access and manage runtime configuration variables that differ between environments and are needed both on the server and client sides.
-      - For SEO use useHead and useSeoMeta.
-      - For images use <NuxtImage> or <NuxtPicture> component and for Icons use Nuxt Icons module.
-      - use app.config.ts for app theme configuration.
+- Provide answers in small, incremental steps, avoiding large code blocks.
+- Each step should include:
+  1. A concise explanation of the purpose of the change or action.
+  2. A minimal code snippet (when necessary) showcasing only the relevant part of the solution.
+  3. A short summary or rationale that helps the user understand the reasoning behind it.
+- Gradually build upon the previous step, so the final solution evolves over time rather than being presented all at once.
 
-      Fetching Data
-      1. Use useFetch for standard data fetching in components that benefit from SSR, caching, and reactively updating based on URL changes.
-      2. Use $fetch for client-side requests within event handlers or when SSR optimization is not needed.
-      3. Use useAsyncData when implementing complex data fetching logic like combining multiple API calls or custom caching and error handling.
-      4. Set server: false in useFetch or useAsyncData options to fetch data only on the client side, bypassing SSR.
-      5. Set lazy: true in useFetch or useAsyncData options to defer non-critical data fetching until after the initial render.
+Code Style and Structure
 
-      Naming Conventions
-      - Utilize composables, naming them as use<MyComposable>.
-      - Use **PascalCase** for component file names (e.g., components/MyComponent.vue).
-      - Favor named exports for functions to maintain consistency and readability.
+- Write clean, maintainable, and technically accurate TypeScript code.
+- Prioritize functional and declarative programming patterns; avoid using classes.
+- Emphasize iteration and modularization to follow DRY principles and minimize code duplication.
+- Prefer Composition API <script setup> style.
+- Use Composables to encapsulate and share reusable client-side logic or state across multiple components in your Nuxt application.
 
-      TypeScript Usage
-      - Use TypeScript throughout; prefer interfaces over types for better extendability and merging.
-      - Avoid enums, opting for maps for improved type safety and flexibility.
-      - Use functional components with TypeScript interfaces.
+Nuxt 3 Specifics
 
-      UI and Styling
-      - Use Nuxt UI and Tailwind CSS for components and styling.
-      - Implement responsive design with Nuxt UI & Tailwind CSS; use a mobile-first approach.
+- Nuxt 3 provides auto imports, so there’s no need to manually import 'ref', 'useState', or 'useRouter'.
+- Use the Nuxt 4 compatibility, so the folder structure is compatible with Nuxt 4, meaning that on the root level you have the '/app' including '/components', '/layouts', '/pages', '/store', '/types', '/utils', and '/composables' folders where appropriate code should be placed, alongside the 'app.vue' file.
+- For color mode handling, use the built-in '@nuxtjs/color-mode' with the 'useColorMode()' function.
+- Take advantage of VueUse functions to enhance reactivity and performance (except for color mode management).
+- Use the Server API (within the server/api directory) to handle server-side operations like database interactions, authentication, or processing sensitive data that must remain confidential.
+- Use useRuntimeConfig to access and manage runtime configuration variables that differ between environments and are needed both on the server and client sides.
+- For SEO, use useHead and useSeoMeta.
+- For images, use the <NuxtImage> or <NuxtPicture> component; for icons, use the Nuxt Icons module.
+- Use app.config.ts for app theme configuration.
+
+Fetching Data
+
+1. Use useFetch for standard data fetching in components that benefit from SSR, caching, and reactively updating based on URL changes.
+2. Use $fetch for client-side requests within event handlers or when SSR optimization is not needed.
+3. Use useAsyncData when implementing complex data fetching logic like combining multiple API calls or custom caching and error handling.
+4. Set server: false in useFetch or useAsyncData options to fetch data only on the client side, bypassing SSR.
+5. Set lazy: true in useFetch or useAsyncData options to defer non-critical data fetching until after the initial render.
+
+Naming Conventions
+
+- Utilize composables, naming them as use<MyComposable>.
+- Use **PascalCase** for component file names (e.g., components/MyComponent.vue).
+- Favor named exports for functions to maintain consistency and readability.
+
+TypeScript Usage
+
+- Use TypeScript throughout; prefer interfaces over types for better extendability and merging.
+- Avoid enums, opting for maps for improved type safety and flexibility.
+- Use functional components with TypeScript interfaces.
+
+UI and Styling
+
+- Use Nuxt UI and Tailwind CSS for components and styling.
+- Implement responsive design with Nuxt UI & Tailwind CSS; use a mobile-first approach.
+- Use only existing components from Nuxt UI and Tailwind CSS, do not create new ones, and make sure to use the correct naming conventions.
