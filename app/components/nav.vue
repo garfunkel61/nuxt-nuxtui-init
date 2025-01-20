@@ -19,40 +19,69 @@
       </ClientOnly>
     </template>
     <template #right>
-      <UButton to="/auth/login" variant="ghost" class="font-medium">
+      <UButton
+        v-if="!isLoggedIn"
+        to="/auth/login"
+        variant="ghost"
+        class="font-medium"
+      >
         Login
       </UButton>
-      <UButton to="/auth/register" color="primary"> Register </UButton>
+      <UButton v-if="!isLoggedIn" to="/auth/register" color="primary">
+        Register
+      </UButton>
+      <UButton
+        v-if="isLoggedIn"
+        @click="logout"
+        variant="ghost"
+        color="primary"
+        class="font-medium"
+      >
+        Logout
+      </UButton>
     </template>
   </UHeader>
 </template>
 
 <script setup>
+import { useAuthStore } from "@/components/auth/use-auth";
+
 const navItems = [
   {
     label: "Home",
     to: "/",
-    icon: "i-heroicons-home",
+    icon: "heroicons:home",
     variant: "ghost",
     class: "font-medium",
     activeClass: "text-primary-500 dark:text-primary-400",
     inactiveClass:
       "text-gray-700 dark:text-gray-200 hover:text-primary-500 dark:hover:text-primary-400",
+  },
+  {
+    label: "Dashboard",
+    to: "/dashboard",
+    icon: "heroicons:squares-2x2",
+    variant: "ghost",
+    class: "font-medium",
+  },
+  {
+    label: "Projects",
+    to: "/projects",
+    icon: "heroicons:squares-2x2",
+    variant: "ghost",
+    class: "font-medium",
   },
   {
     label: "Blog",
     to: "/blog",
-    icon: "i-heroicons-home",
+    icon: "heroicons:pencil-square",
     variant: "ghost",
     class: "font-medium",
-    activeClass: "text-primary-500 dark:text-primary-400",
-    inactiveClass:
-      "text-gray-700 dark:text-gray-200 hover:text-primary-500 dark:hover:text-primary-400",
   },
   {
     label: "About",
     to: "/about",
-    icon: "i-heroicons-information-circle",
+    icon: "heroicons:information-circle",
     variant: "ghost",
     class: "font-medium",
     activeClass: "text-primary-500 dark:text-primary-400",
@@ -60,4 +89,9 @@ const navItems = [
       "text-gray-700 dark:text-gray-200 hover:text-primary-500 dark:hover:text-primary-400",
   },
 ];
+
+const authStore = useAuthStore();
+// Use storeToRefs to maintain reactivity
+const { isLoggedIn } = storeToRefs(authStore);
+const { logout } = authStore;
 </script>

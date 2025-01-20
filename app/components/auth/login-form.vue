@@ -6,6 +6,13 @@
 
     <form @submit.prevent="handleSubmit" class="p-4">
       <div class="space-y-4">
+        <UAlert
+          v-if="error"
+          color="red"
+          variant="soft"
+          :title="error"
+          class="mb-4"
+        />
         <UFormGroup label="Email address" required>
           <UInput
             v-model="form.email"
@@ -39,6 +46,7 @@
           color="primary"
           variant="solid"
           :loading="loading"
+          :disabled="!isValid"
           block
         >
           Sign in
@@ -62,21 +70,66 @@
 
 <script setup lang="ts">
 const loading = ref(false);
+const error = ref<string | null>(null);
+
 const form = reactive({
   email: "",
   password: "",
   remember: false,
 });
 
+// Basic form validation
+const isValid = computed(() => {
+  return form.email && form.password.length >= 6;
+});
+
+const client = useSupabaseClient();
+const user = useSupabaseUser();
+const router = useRouter();
+
 const handleSubmit = async () => {
+  if (!isValid.value) {
+    error.value = "Please fill in all fields correctly";
+    return;
+  }
+
   loading.value = true;
+  error.value = null;
+
   try {
-    // Add your login logic here
+    const { error: authError } = await client.auth.signInWithPassword({
+      email: form.email,
+      password: form.password,
+    });
+
+    if (authError) throw authError;
+
+    // If remember me is not checked, set session to expire in 1 day
+    if (!form.remember) {
+      const { error: sessionError } = await client.auth.setSession({
+        access_token: (
+          await client.auth.getSession()
+        ).data.session?.access_token!,
+        refresh_token: (
+          await client.auth.getSession()
+        ).data.session?.refresh_token!,
+        // expires_in: 86400, // 24 hours in seconds
+      });
+      if (sessionError) throw sessionError;
+    }
+
     await navigateTo("/dashboard");
-  } catch (error) {
-    console.error(error);
+  } catch (err: any) {
+    error.value = err?.message || "An error occurred during sign in";
   } finally {
     loading.value = false;
   }
 };
+
+// Redirect if already logged in
+watchEffect(() => {
+  if (user.value) {
+    navigateTo("/dashboard");
+  }
+});
 </script>

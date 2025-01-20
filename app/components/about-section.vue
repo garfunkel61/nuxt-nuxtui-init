@@ -1,5 +1,5 @@
 <template>
-  <UContainer class="mt-20">
+  <UContainer class="mt-10">
     <UCard>
       <template #header>
         <h1 class="text-2xl font-bold">About Us</h1>
