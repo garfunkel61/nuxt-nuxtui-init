@@ -1,7 +1,11 @@
 <template>
-  <div class="min-h-screen h-full bg-gray-50 dark:bg-gray-800 flex flex-col">
+  <div
+    class="min-h-screen h-full w-full bg-gray-50 dark:bg-gray-800 flex flex-col"
+  >
     <Nav />
-    <main class="flex-1 pt-10 pb-10">
+    <main
+      class="flex-1 pt-8 pb-8 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+    >
       <slot />
     </main>
     <Footer />

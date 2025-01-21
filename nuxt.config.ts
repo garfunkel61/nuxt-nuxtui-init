@@ -1,7 +1,13 @@
 export default defineNuxtConfig({
   extends: ["@nuxt/ui-pro"],
-  modules: ["@nuxt/content", "@nuxt/ui", "@nuxtjs/supabase", "@pinia/nuxt"],
-  compatibilityDate: "2024-11-01",
+  modules: [
+    "@nuxt/content",
+    "@nuxt/ui",
+    "@nuxtjs/supabase",
+    "@pinia/nuxt",
+    "@nuxt/image",
+  ],
+  compatibilityDate: "2025-01-20",
   future: {
     compatibilityVersion: 4,
   },
@@ -24,5 +30,8 @@ export default defineNuxtConfig({
       name: "layout",
       mode: "out-in",
     },
+  },
+  ui: {
+    safelistColors: ["primary", "secondary", "danger", "warning", "info"],
   },
 });

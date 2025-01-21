@@ -22,7 +22,7 @@
       <UButton
         v-if="!isLoggedIn"
         to="/auth/login"
-        variant="ghost"
+        variant="soft"
         class="font-medium"
       >
         Login
@@ -33,7 +33,7 @@
       <UButton
         v-if="isLoggedIn"
         @click="logout"
-        variant="ghost"
+        variant="soft"
         color="primary"
         class="font-medium"
       >
@@ -87,6 +87,13 @@ const navItems = [
     activeClass: "text-primary-500 dark:text-primary-400",
     inactiveClass:
       "text-gray-700 dark:text-gray-200 hover:text-primary-500 dark:hover:text-primary-400",
+  },
+  {
+    label: "Theme",
+    to: "/dashboard/theme",
+    icon: "heroicons:squares-2x2",
+    variant: "ghost",
+    class: "font-medium",
   },
 ];
 
