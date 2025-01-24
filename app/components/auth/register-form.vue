@@ -6,14 +6,6 @@
 
     <form @submit.prevent="handleSubmit" class="p-4">
       <div class="space-y-4">
-        <UFormGroup label="Full name" required>
-          <UInput
-            v-model="form.name"
-            placeholder="Enter your full name"
-            :ui="{ base: 'w-full' }"
-          />
-        </UFormGroup>
-
         <UFormGroup label="Email address" required>
           <UInput
             v-model="form.email"
@@ -23,7 +15,7 @@
           />
         </UFormGroup>
 
-        <UFormGroup label="Password" required>
+        <UFormGroup label="Password" required :error="errors.password">
           <UInput
             v-model="form.password"
             type="password"
@@ -32,7 +24,11 @@
           />
         </UFormGroup>
 
-        <UFormGroup label="Confirm password" required>
+        <UFormGroup
+          label="Confirm password"
+          required
+          :error="errors.confirmPassword"
+        >
           <UInput
             v-model="form.confirmPassword"
             type="password"
@@ -68,8 +64,9 @@
 </template>
 
 <script setup lang="ts">
+import { useRouter } from "vue-router";
+
 interface RegisterForm {
-  name: string;
   email: string;
   password: string;
   confirmPassword: string;
@@ -77,19 +74,61 @@ interface RegisterForm {
 
 const loading = ref(false);
 const form = reactive<RegisterForm>({
-  name: "",
   email: "",
   password: "",
   confirmPassword: "",
 });
 
+const errors = reactive({
+  password: "",
+  confirmPassword: "",
+});
+
+function validateForm(): boolean {
+  errors.password = "";
+  errors.confirmPassword = "";
+
+  if (form.password.length < 6) {
+    errors.password = "Password must be at least 6 characters long";
+    return false;
+  }
+
+  if (form.password !== form.confirmPassword) {
+    errors.confirmPassword = "Passwords do not match";
+    return false;
+  }
+
+  return true;
+}
+
+const client = useSupabaseClient();
+const router = useRouter();
+
 async function handleSubmit() {
+  if (!validateForm()) return;
+
   loading.value = true;
   try {
-    // Add your registration logic here
-    console.log("Form submitted:", form);
-  } catch (error) {
-    console.error("Registration error:", error);
+    const { error } = await client.auth.signUp({
+      email: form.email,
+      password: form.password,
+    });
+
+    if (error) {
+      useToast().add({
+        title: "Error",
+        description: error.message,
+        color: "red",
+      });
+      return;
+    }
+
+    router.push("/auth/login");
+    useToast().add({
+      title: "Success",
+      description: "Please check your email to confirm your account",
+      color: "green",
+    });
   } finally {
     loading.value = false;
   }

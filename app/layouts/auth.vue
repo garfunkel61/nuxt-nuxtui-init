@@ -1,6 +1,7 @@
 <template>
   <div class="min-h-screen h-full bg-white dark:bg-gray-950 flex flex-col">
     <Nav />
+    <UNotifications />
     <main
       class="flex-1 flex items-start justify-center pt-10 bg-gray-50 dark:bg-gray-800"
     >

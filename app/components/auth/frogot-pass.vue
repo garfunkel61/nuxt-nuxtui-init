@@ -43,23 +43,29 @@ const formState = ref({
 });
 
 const pending = ref(false);
+const supabase = useSupabaseClient();
+const toast = useToast();
 
 async function onSubmit() {
   pending.value = true;
   try {
-    await $fetch("/api/auth/forgot-password", {
-      method: "POST",
-      body: formState.value,
-    });
+    const { error } = await supabase.auth.resetPasswordForEmail(
+      formState.value.email,
+      {
+        redirectTo: `${window.location.origin}/auth/reset-password`,
+      }
+    );
 
-    useToast().add({
+    if (error) throw error;
+
+    toast.add({
       title: "Success",
       description:
         "If an account exists with this email, you will receive password reset instructions.",
       color: "green",
     });
   } catch (error) {
-    useToast().add({
+    toast.add({
       title: "Error",
       description: "Something went wrong. Please try again.",
       color: "red",

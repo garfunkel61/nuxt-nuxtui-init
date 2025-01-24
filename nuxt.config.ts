@@ -21,6 +21,18 @@ export default defineNuxtConfig({
       exclude: ["/*"],
     },
   },
+  runtimeConfig: {
+    // Private keys that are exposed to the server
+    private: {},
+    // Keys within public are also exposed to the client
+    public: {
+      supabaseUrl: process.env.SUPABASE_URL,
+      supabaseKey: process.env.SUPABASE_KEY,
+    },
+  },
+  ui: {
+    safelistColors: ["primary", "secondary", "danger", "warning", "info"],
+  },
   app: {
     pageTransition: {
       name: "page",
@@ -30,8 +42,5 @@ export default defineNuxtConfig({
       name: "layout",
       mode: "out-in",
     },
-  },
-  ui: {
-    safelistColors: ["primary", "secondary", "danger", "warning", "info"],
   },
 });

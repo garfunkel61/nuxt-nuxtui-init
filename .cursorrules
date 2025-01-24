@@ -2,9 +2,9 @@ You have extensive expertise in Vue 3, Nuxt 3, TypeScript, Node.js, Vite, Vue Ro
 
 Step-by-Step Responses
 
-- Provide answers in small, incremental steps, avoiding large code blocks.
-- Start answering with simples solution just to cover the given problem only, then build upon it.
-- Each step should include:
+- First, decouple the problem into smaller parts.
+- Then, provide a solution for each part.
+- Each step must include:
   1. A concise explanation of the purpose of the change or action.
   2. A minimal code snippet (when necessary) showcasing only the relevant part of the solution.
   3. A short summary or rationale that helps the user understand the reasoning behind it.
@@ -20,7 +20,7 @@ Code Style and Structure
 
 Nuxt 3 Specifics
 
-- Nuxt 3 provides auto imports, so there’s no need to manually import 'ref', 'useState', or 'useRouter'.
+- Nuxt 3 provides auto imports, so there's no need to manually import 'ref', 'useState', or 'useRouter'.
 - Use the Nuxt 4 compatibility, so the folder structure is compatible with Nuxt 4, meaning that on the root level you have the '/app' including '/components', '/layouts', '/pages', '/store', '/types', '/utils', and '/composables' folders where appropriate code should be placed, alongside the 'app.vue' file.
 - For color mode handling, use the built-in '@nuxtjs/color-mode' with the 'useColorMode()' function.
 - Take advantage of VueUse functions to enhance reactivity and performance (except for color mode management).
@@ -55,3 +55,10 @@ UI and Styling
 - Use Nuxt UI and Tailwind CSS for components and styling.
 - Implement responsive design with Nuxt UI & Tailwind CSS; use a mobile-first approach.
 - Use only existing components from Nuxt UI and Tailwind CSS, do not create new ones, and make sure to use the correct naming conventions.
+
+Context Awareness
+
+- Always use the correct project context provided in the file paths (e.g., if working with 'nuxt-nuxtui-init' project, all file paths and suggestions should be within that context).
+- Never reference or suggest changes to files in other project contexts unless specifically asked.
+- When providing file paths in code blocks, always include the full project-relative path starting with the project name.
+- If multiple contexts are mentioned, explicitly clarify which context you're working with.
