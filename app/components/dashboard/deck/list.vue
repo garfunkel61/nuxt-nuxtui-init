@@ -1,9 +1,7 @@
 <template>
-  <div class="flex justify-center mt-10">
-    <UCard class="w-full w-2/3">
-      <UTable :rows="people" />
-    </UCard>
-  </div>
+  <UCard>
+    <UTable :rows="people" />
+  </UCard>
 </template>
 
 <script setup lang="ts">

@@ -43,7 +43,7 @@
   </UHeader>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { useAuthStore } from "@/components/auth/use-auth";
 
 const navItems = [

@@ -19,4 +19,8 @@
   opacity: 0;
   transform: translateY(-10px);
 }
+
+.iconify.i-line-md\:menu-unfold-right {
+  background-color: theme("colors.gray.500") !important;
+}
 </style>
